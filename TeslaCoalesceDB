@@ -1,0 +1,11 @@
+CREATE TABLE tblEmployeeCoalesce(ID INT,FirstName VARCHAR(255),MiddleName VARCHAR(255),LastName VARCHAR(255));
+
+INSERT INTO tblEmployeeCoalesce VALUES(1,'Sam',NULL,NULL);
+INSERT INTO tblEmployeeCoalesce VALUES(2,NULL,'Todd','Tanzan');
+INSERT INTO tblEmployeeCoalesce VALUES(3,NULL,NULL,'Sara');
+INSERT INTO tblEmployeeCoalesce VALUES(4,'Ben','Parker',NULL);
+INSERT INTO tblEmployeeCoalesce VALUES(5,'James','Nick','Nancy');
+
+SELECT * FROM dbo.tblEmployeeCoalesce;
+
+SELECT Id, COALESCE(FirstName,MiddleName,LastName) AS Name FROM dbo.tblEmployeeCoalesce;
